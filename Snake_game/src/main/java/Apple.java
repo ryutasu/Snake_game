@@ -1,5 +1,5 @@
+
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,37 +10,24 @@ import java.awt.event.KeyEvent;
  *
  * @author DragonLotus
  */
-public abstract class MoveableObject extends GameObject{
-    protected int deltaX;
-    protected int deltaY;
-    protected int direction = KeyEvent.VK_RIGHT;
+public class Apple extends GameObject {
+    int type;
 
-    public MoveableObject(int x, int y, int width, int height, Color color) {
+    public Apple() {
+        super(0, 0, 0, 0, Color.BLACK);
+    }
+
+    public Apple(int type,int x, int y, int width, int height, Color color) {
         super(x, y, width, height, color);
+        this.type = type;
     }
 
-    public int getDeltaX() {
-        return deltaX;
+    public int getType() {
+        return type;
     }
 
-    public void setDeltaX(int deltaX) {
-        this.deltaX = deltaX;
-    }
-
-    public int getDeltaY() {
-        return deltaY;
-    }
-
-    public void setDeltaY(int deltaY) {
-        this.deltaY = deltaY;
-    }
-
-    public int getDirection() {
-        return direction;
-    }
-
-    public void setDirection(int direction) {
-        this.direction = direction;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getX() {
@@ -82,8 +69,6 @@ public abstract class MoveableObject extends GameObject{
     public void setColor(Color color) {
         this.color = color;
     }
-    
-    
     
     
 }

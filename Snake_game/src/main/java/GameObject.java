@@ -1,7 +1,6 @@
 
 import java.awt.Color;
 import java.awt.Component;
-import javax.accessibility.AccessibleContext;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,16 +19,9 @@ public abstract class GameObject extends Component{
     protected Color color;
 
     public GameObject() {
-        super();
-        this.x = 0;
-        this.y = 0;
-        this.width = 100;
-        this.height = 100;
-        this.color = Color.BLACK;
     }
 
     public GameObject(int x, int y, int width, int height, Color color) {
-        //super();
         this.x = x;
         this.y = y;
         this.width = width;
@@ -76,29 +68,6 @@ public abstract class GameObject extends Component{
     public void setColor(Color color) {
         this.color = color;
     }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-    
-    public int getCenterX(){
-        return x+width/2;
-    }
-    
-    public int getCenterY(){
-        return y+height/2;
-    }
-
-    @Override
-    public String toString() {
-        return "GameObject{" + "x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ", color=" + color + '}';
-    }
-    
-    
     
     
 }

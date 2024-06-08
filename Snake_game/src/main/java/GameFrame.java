@@ -1,8 +1,8 @@
 
-import java.awt.*;
-import java.io.IOException;
-import java.text.AttributedCharacterIterator;
-import java.util.ArrayList;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /*
@@ -14,10 +14,10 @@ import javax.swing.JFrame;
  *
  * @author DragonLotus
  */
-public class Game_Field extends JFrame{
-    Game_Field() throws IOException{
-        this.add(new GamePanel("sheetdata.txt"));
-        this.setTitle("Rhythm_Game");
+public class GameFrame extends JFrame{
+    GameFrame(){
+        this.add(new GamePanel());
+        this.setTitle("Snake");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.pack();

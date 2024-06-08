@@ -1,8 +1,5 @@
-
 import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 import javax.swing.JOptionPane;
 
 /*
@@ -14,21 +11,28 @@ import javax.swing.JOptionPane;
  *
  * @author DragonLotus
  */
-public class Play_music {
-    
-    void playmusic(String musicLocation)
+public class Music {
+    AudioInputStream audioinput;
+    Clip clip;
+    int loop;
+    void playmusic(int loop,String musicLocation)
     {
         try{
             File music = new File(musicLocation);
             
             if(music.exists())
             {
-                AudioInputStream audioinput = AudioSystem.getAudioInputStream(music);
-                Clip clip = AudioSystem.getClip();
-                clip.open(audioinput);
-                clip.start();
+                this.audioinput = AudioSystem.getAudioInputStream(music);
+                this.clip = AudioSystem.getClip();
+                this.clip.open(audioinput);
+                if(loop != 0){
+                    this.clip.loop(loop);
+                }
+                else{
+                    this.clip.start();
+                }
                 
-                JOptionPane.showMessageDialog(null,"Press OK to stop playing");
+                //JOptionPane.showMessageDialog(null,"Press OK to stop playing");
             }
             else
             {
@@ -39,5 +43,7 @@ public class Play_music {
             ex.printStackTrace();
         }
     }
-    
+    void Stop(){
+        this.clip.stop();
+    }
 }

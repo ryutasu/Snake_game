@@ -1,6 +1,5 @@
 
 import java.awt.Color;
-import javax.accessibility.AccessibleContext;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,24 +10,24 @@ import javax.accessibility.AccessibleContext;
  *
  * @author DragonLotus
  */
-public class Key extends GameObject {
-    protected int Key;
+public class Block extends GameObject{
+    int type;
 
-    public Key(int Key) {
-        this.Key = Key;
+    public Block() {
+        super(0, 0, 0, 0, Color.BLACK);
     }
 
-    public Key(int Key, int x, int y, int width, int height, Color color) {
+    public Block(int type,int x, int y, int width, int height, Color color) {
         super(x, y, width, height, color);
-        this.Key = Key;
+        this.type = type;
     }
 
-    public int getKey() {
-        return Key;
+    public int getType() {
+        return type;
     }
 
-    public void setKey(int Key) {
-        this.Key = Key;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getX() {
@@ -70,11 +69,4 @@ public class Key extends GameObject {
     public void setColor(Color color) {
         this.color = color;
     }
-    
-    
-    
-    
-    
-    
-    
 }
